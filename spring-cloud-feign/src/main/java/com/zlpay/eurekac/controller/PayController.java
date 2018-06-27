@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zlpay.eurekac.app.HiAppService;
 
-@RestController("hi")
-public class Hicontroller {
+@RestController("pay")
+public class PayController {
 
 	@Autowired
 	HiAppService schedualServiceHi;
