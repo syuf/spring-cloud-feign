@@ -7,24 +7,34 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zlpay.eurekac.app.HiAppService;
+import com.zlpay.common.feign.dto.PayDTO;
+import com.zlpay.common.feign.dto.PayResultDTO;
+import com.zlpay.eurekac.service.PayService;
 
 @RestController
 public class PayController {
 
 	@Value("${username}")
-    String content;
+    private String userName;
 	
 	@Autowired
-	HiAppService schedualServiceHi;
+	PayService payService;
 	
-    @RequestMapping(value = "/hi",method = RequestMethod.GET)
-    public String sayHi(@RequestParam String name){
-        return schedualServiceHi.sayHiFromClientOne(name);
+    @RequestMapping(value = "/pay",method = RequestMethod.GET)
+    public PayResultDTO pay(){
+    	PayDTO payDto = new PayDTO();
+    	payDto.setOrderId("1111");
+    	payDto.setAmt(200);
+        return payService.pay(payDto);
     }
     
-    @RequestMapping(value = "/read",method = RequestMethod.GET)
+    @RequestMapping(value = "/refund",method = RequestMethod.GET)
+    public String refund(String orderId){
+        return payService.refund(orderId);
+    }
+    
+    @RequestMapping(value = "/readUserName",method = RequestMethod.GET)
     public String read(){
-        return content;
+        return userName;
     }
 }
