@@ -1,20 +1,19 @@
 package com.zlpay.eurekac.rabbitmq;
 
-import java.util.Date;
-
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.zlpay.common.constant.QueueConstants;
 
 @Component
 public class Producer {
 	@Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void send(){
+    public void send(String context){
 
-        String context = "hello "+new Date();
-        this.rabbitTemplate.convertAndSend("hello",context);
+        this.rabbitTemplate.convertAndSend(QueueConstants.EMAIL,context);
 
     }
 }
