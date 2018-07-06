@@ -1,35 +1,5 @@
-server:
-  port: 3002
-  
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://127.0.0.1:3000/eureka/
 spring:
-  application:
-    name: service-feign
-  sleuth:
-    web:
-      client:
-        enabled: true
-    sampler:
-      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
-  zipkin:
-    base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
-  cloud:
-    bus:
-      trace:
-        enabled: true
-#    config:
-#      searchPaths: config
-#      label: master
-#      profile: dev
-#      uri: config-server
-  rabbitmq:
-    host: 172.16.97.114
-    port: 5672
-    username: admin
-    password: admin    
-feign: 
-  hystrix: 
-    enabled: true
+  profiles:
+    active: dev
+
+ 

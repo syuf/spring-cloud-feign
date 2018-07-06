@@ -1,4 +1,4 @@
-package com.zlpay.eurekac;
+package com.zlpay;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(SpringCloudEurekaCApplication.class);
+		return application.sources(SpringCloudFeignApplication.class);
 	}
 
 }

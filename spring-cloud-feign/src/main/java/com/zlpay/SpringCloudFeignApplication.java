@@ -1,4 +1,4 @@
-package com.zlpay.eurekac;
+package com.zlpay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,10 +14,10 @@ import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServl
 @EnableFeignClients
 @EnableCircuitBreaker
 @SpringBootApplication
-public class SpringCloudEurekaCApplication {
+public class SpringCloudFeignApplication {
     
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCloudEurekaCApplication.class, args);
+		SpringApplication.run(SpringCloudFeignApplication.class, args);
 	}
 	
 	@Bean

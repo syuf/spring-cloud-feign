@@ -1,20 +1,22 @@
-package com.zlpay.eurekac.controller;
+package com.zlpay.feign.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zlpay.common.feign.dto.PayDTO;
 import com.zlpay.common.feign.dto.PayResultDTO;
-import com.zlpay.eurekac.service.PayService;
+import com.zlpay.feign.service.PayService;
 
+@RefreshScope
 @RestController
 public class PayController {
 
-//	@Value("${url}")
-//    private String url;
+	@Value("${name}")
+    private String name;
 	
 	@Autowired
 	PayService payService;
@@ -32,8 +34,8 @@ public class PayController {
         return payService.refund(orderId);
     }
     
-//    @RequestMapping(value = "/readUserName",method = RequestMethod.GET)
-//    public String read(){
-//        return url;
-//    }
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String read(){
+        return name;
+    }
 }
