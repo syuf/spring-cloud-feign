@@ -15,7 +15,7 @@ import com.zlpay.feign.service.PayService;
 @RestController
 public class PayController {
 
-	@Value("${name}")
+	@Value("${spring.rabbitmq.username}")
     private String name;
 	
 	@Autowired

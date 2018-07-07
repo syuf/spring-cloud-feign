@@ -3,7 +3,6 @@ package com.zlpay.feign.controller;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,14 +17,6 @@ public class RabbitmqController {
 	
 	@Autowired
     private PayProducer producer;
-	
-	@Value("${name}")
-	private String name;
-	
-	@GetMapping("/name")
-    public String name() {
-        return name;
-    }
  
     @GetMapping("/send")
     public String send(String msg) {
