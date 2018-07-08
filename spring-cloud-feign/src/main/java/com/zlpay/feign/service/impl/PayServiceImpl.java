@@ -3,7 +3,7 @@ package com.zlpay.feign.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.zlpay.common.app.ProviderService;
+import com.zlpay.common.app.ProviderAppService;
 import com.zlpay.common.feign.dto.PayDTO;
 import com.zlpay.common.feign.dto.PayResultDTO;
 import com.zlpay.feign.service.PayService;
@@ -12,7 +12,7 @@ import com.zlpay.feign.service.PayService;
 public class PayServiceImpl implements PayService {
 
 	@Autowired
-	private ProviderService providerService;
+	private ProviderAppService providerService;
 	
 	@Override
 	public PayResultDTO pay(PayDTO dto) {
