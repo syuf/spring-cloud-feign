@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>spring-cloud-eureka-c</name>
+	<name>spring-cloud-feign</name>
 	<description>eureka feign</description>
 
 	<parent>

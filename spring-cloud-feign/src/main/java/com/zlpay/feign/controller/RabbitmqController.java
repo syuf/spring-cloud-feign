@@ -21,7 +21,7 @@ public class RabbitmqController {
     @GetMapping("/send")
     public String send(String msg) {
     	for(int i = 1;i < 10; i++) {
-    		producer.send(ExchangeEnum.PAY_TOPIC_EXCHANGE, TopicRoutingKeyConstant.PAY_TOPIC, i + "a", UUID.randomUUID().toString());
+    		producer.send(ExchangeEnum.PAY_TOPIC_EXCHANGE, TopicRoutingKeyConstant.PAY_TOPIC, "消息" + i, UUID.randomUUID().toString());
     	}
         return "Send OK.";
     }

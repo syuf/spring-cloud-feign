@@ -2,4 +2,4 @@ spring:
   application:
     name: service-feign
   profiles:
-    active: dev
+    active: prod

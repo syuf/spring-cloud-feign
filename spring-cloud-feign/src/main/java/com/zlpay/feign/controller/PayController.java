@@ -15,7 +15,7 @@ import com.zlpay.feign.service.PayService;
 @RestController
 public class PayController {
 
-	@Value("${spring.rabbitmq.username}")
+	@Value("${spring.redis.lettuce.pool.max-active}")
     private String name;
 	
 	@Autowired
